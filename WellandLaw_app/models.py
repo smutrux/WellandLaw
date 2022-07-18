@@ -39,11 +39,11 @@ class MemberForm(models.Model):
     last_name = models.CharField(max_length=300)
     firm = models.CharField(max_length=200)
     address = models.CharField(max_length=200)
-    phone = models.IntegerField(max_length=10)
-    fax =  models.IntegerField(max_length=100)
+    phone = models.IntegerField(blank=True, null=True)
+    fax =  models.IntegerField(blank=True, null=True)
     url = models.URLField(max_length=2000)
     practice = models.CharField(max_length=500)
-    number = models.IntegerField(max_length=4)
+    number = models.PositiveSmallIntegerField()
 
     def __str__(self):
         return self.first_name + ' ' + self.last_name
@@ -52,8 +52,8 @@ class MemberForm(models.Model):
 class EventForm(models.Model):
     name = models.CharField(max_length=300)
     email = models.EmailField(blank=True, null=True)
-    phone = models.IntegerField(max_length=10, blank=True, null=True)
-    firm = models.CharField(blank=True, null=True)
+    phone = models.IntegerField(blank=True, null=True)
+    firm = models.CharField(max_length=300, blank=True, null=True)
     event = models.ForeignKey(Event, null=True, on_delete=models.SET_NULL)
 
     def __str__(self):
@@ -68,10 +68,10 @@ class ContactForm(models.Model):
     )
 
     name = models.CharField(max_length=300)
-    email = models.EmailField(blank=True, null=True)
-    phone = models.IntegerField(max_length=10, blank=True, null=True)
-    firm = models.CharField(blank=True, null=True)
-    subject = models.CharField(maxlength=100, choices=SUBJECT_CHOICES)
+    email = models.EmailField(max_length=300, blank=True, null=True)
+    phone = models.IntegerField(blank=True, null=True)
+    firm = models.CharField(max_length=300, blank=True, null=True)
+    subject = models.CharField(max_length=100, choices=SUBJECT_CHOICES, blank=True, null=True)
     message = models.TextField(max_length=1500)
 
 
@@ -83,7 +83,7 @@ class Job(models.Model):
     date = models.DateField(blank=True, null=True)
     position = models.CharField(max_length=200)
     organization = models.CharField(max_length=300, blank=True, null=True)
-    link = models.URLField(maxlength=2000, blank=True, null=True)
+    link = models.URLField(max_length=2000, blank=True, null=True)
 
     def __str__(self):
-        return self.name
+        return self.organization
