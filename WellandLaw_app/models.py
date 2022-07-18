@@ -31,7 +31,7 @@ class Event(models.Model):
     location = models.CharField(max_length=500)
     image = models.ImageField(upload_to='static/images/event')
     def __str__(self):
-        return self.name
+        return self.title
 
 
 class MemberForm(models.Model):
@@ -39,8 +39,8 @@ class MemberForm(models.Model):
     last_name = models.CharField(max_length=300)
     firm = models.CharField(max_length=200)
     address = models.CharField(max_length=200)
-    phone = models.IntegerField(blank=True, null=True)
-    fax =  models.IntegerField(blank=True, null=True)
+    phone = models.CharField(max_length=10, blank=True, null=True)
+    fax =  models.CharField(max_length=10, blank=True, null=True)
     url = models.URLField(max_length=2000)
     practice = models.CharField(max_length=500)
     number = models.PositiveSmallIntegerField()
@@ -52,7 +52,7 @@ class MemberForm(models.Model):
 class EventForm(models.Model):
     name = models.CharField(max_length=300)
     email = models.EmailField(blank=True, null=True)
-    phone = models.IntegerField(blank=True, null=True)
+    phone = models.CharField(max_length=10, blank=True, null=True)
     firm = models.CharField(max_length=300, blank=True, null=True)
     event = models.ForeignKey(Event, null=True, on_delete=models.SET_NULL)
 
@@ -69,7 +69,7 @@ class ContactForm(models.Model):
 
     name = models.CharField(max_length=300)
     email = models.EmailField(max_length=300, blank=True, null=True)
-    phone = models.IntegerField(blank=True, null=True)
+    phone = models.CharField(max_length=10, blank=True, null=True)
     firm = models.CharField(max_length=300, blank=True, null=True)
     subject = models.CharField(max_length=100, choices=SUBJECT_CHOICES, blank=True, null=True)
     message = models.TextField(max_length=1500)
