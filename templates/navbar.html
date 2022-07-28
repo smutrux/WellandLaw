@@ -1,0 +1,27 @@
+{% load static %}
+
+<div data-animation="default" data-collapse="small" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar-3 w-nav">
+    <div class="container w-container">
+      <a href="{% url 'index' %}" class="w-nav-brand"><img width="62" loading="lazy" src="{% static 'images/7.svg' %}" alt=""></a>
+      <nav role="navigation" class="w-nav-menu">
+        <div class="w-layout-grid grid-5">
+          <a href="{% url 'landing-page' %}" class="nav-link-2 w-nav-link">Home</a>
+          <a href="{% url 'about-us' %}" aria-current="page" class="nav-link-2 w-nav-link w--current">About</a>
+          <a href="{% url 'membership-page' %}" class="nav-link-2 w-nav-link">Membership</a>
+          <a href="{% url 'cpd-events' %}" class="nav-link-2 w-nav-link">CPD &amp; Social Events</a>
+          <a href="{% url 'public-resources' %}" class="nav-link-2 w-nav-link">Public Resources</a>
+          <a href="{% url 'library' %}" class="nav-link-2 w-nav-link">Library</a>
+          <a href="{% url 'career-centre' %}" class="nav-link-2 w-nav-link">Career Centre</a>
+          <a href="{% url 'practice-portals' %}" id="w-node-_578b77a6-f78d-78cc-3b7c-2213d0036c0a-d0036bf7" class="nav-link-2 w-nav-link">Practice Portal</a>
+          <a href="{% url 'contact-us' %}" id="w-node-_578b77a6-f78d-78cc-3b7c-2213d0036c0c-d0036bf7" class="nav-link-2 w-nav-link">Contact Us</a>
+        </div>
+      </nav>
+      <div class="menu-button w-nav-button">
+        <div data-w-id="578b77a6-f78d-78cc-3b7c-2213d0036c0f" class="burger-btn-wrapper-3">
+          <div data-w-id="578b77a6-f78d-78cc-3b7c-2213d0036c10" class="burger-line"></div>
+          <div data-w-id="578b77a6-f78d-78cc-3b7c-2213d0036c11" class="burger-line"></div>
+          <div data-w-id="578b77a6-f78d-78cc-3b7c-2213d0036c12" class="burger-line"></div>
+        </div>
+      </div>
+    </div>
+  </div>
