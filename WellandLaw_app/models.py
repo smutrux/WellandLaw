@@ -74,7 +74,6 @@ class ContactForm(models.Model):
     subject = models.CharField(max_length=100, choices=SUBJECT_CHOICES, blank=True, null=True)
     message = models.TextField(max_length=1500)
 
-
     def __str__(self):
         return self.name
 
