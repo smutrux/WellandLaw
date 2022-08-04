@@ -15,8 +15,11 @@ def contactus(request):
 def cpdevents(request):
     return render(request, 'cpd-events.html')
 
+def eventsdetails(request, pk):
+    return render(request, 'events-details.html')
+
 def landingpage(request):
-    return render(request, 'landing-page')
+    return render(request, 'landing-page.html')
 
 def library(request):
     return render(request, 'library.html')

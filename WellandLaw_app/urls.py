@@ -6,6 +6,7 @@ urlpatterns = [
     path('career-centre/', views.careercentre, name="career-centre"),
     path('contact-us/', views.contactus, name="contact-us"),
     path('cpd-events/', views.cpdevents, name="cpd-events"),
+    path('events-details/<str:pk>/', views.eventsdetails, name="events-details"),
     path('', views.index, name="index"),
     path('landing-page/', views.landingpage, name="landing-page"),
     path('library/', views.library, name="library"),
