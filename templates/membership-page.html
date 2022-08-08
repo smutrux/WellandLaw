@@ -132,115 +132,32 @@
           </div>
         </div>
         <div id="filterItems" class="w-layout-grid membership-grid">
-          <div data-filterkey="A" class="member-card">
+
+
+          {% for member in members %}
+          <div data-filterkey="{{member.first_name|slice:1}}" class="member-card">
             <div class="member-content">
-              <h3 class="member-heading">Adams, Alyssa</h3>
-              <h4 class="member-heading">Flett Beccario</h4>
-              <div class="blurb-paragraph">190 Division Street, P.O. Box 340, Welland, ON L3B 5P9<a href="http://www.flettbeccario.com/" target="_blank" class="link">‍</a>
+              <h3 class="member-heading">{{member.first_name}}, {{member.last_name}}</h3>
+              <h4 class="member-heading">{{member.firm}}</h4>
+              <div class="blurb-paragraph">{{member.address}}<a href="{{member.url}}" target="_blank" class="link">‍</a>
               </div>
-              <div class="blurb-paragraph">Phone: (905) 732-4481</div>
-              <div class="blurb-paragraph">Fax: (905) 732-2020</div>
+              <div class="blurb-paragraph">Phone: {{member.phone}}</div>
+              <div class="blurb-paragraph">Fax: {{member.fax}}</div>
               <div class="columns-2 w-row">
                 <div class="column-4 w-col w-col-6 w-col-small-6 w-col-tiny-6">
-                  <a href="mailto:aadams@flettbeccario.com" class="link-block-3 w-inline-block"><img src="{% static 'images/email.png' %}" loading="lazy" srcset="{% static 'images/email-p-500.png' %} 500w, {% static 'images/email.png' %} 512w" sizes="40px" alt="" class="image-26"></a>
+                  <a href="mailto:{{member.email}}" class="link-block-3 w-inline-block"><img src="{% static 'images/email.png' %}" loading="lazy" srcset="{% static 'images/email-p-500.png' %} 500w, {% static 'images/email.png' %} 512w" sizes="40px" alt="" class="image-26"></a>
                 </div>
                 <div class="column-3 w-col w-col-6 w-col-small-6 w-col-tiny-6">
-                  <a href="http://www.flettbeccario.com/" target="_blank" class="link-block-3 w-inline-block"><img src="{% static 'images/internet-2.png' %}" loading="lazy" srcset="{% static 'images/internet-2-p-500.png' %} 500w, {% static 'images/internet-2.png' %} 512w" sizes="40px" alt="" class="image-26"></a>
+                  <a href="{{member.url}}" target="_blank" class="link-block-3 w-inline-block"><img src="{% static 'images/internet-2.png' %}" loading="lazy" srcset="{% static 'images/internet-2-p-500.png' %} 500w, {% static 'images/internet-2.png' %} 512w" sizes="40px" alt="" class="image-26"></a>
                 </div>
               </div>
             </div>
           </div>
-          <div data-filterkey="B" class="member-card">
-            <div class="member-content">
-              <h3 class="member-heading">Bauerle, Paul M.</h3>
-              <h4 class="member-heading">Chown Cairns Lawyers LLP</h4>
-              <div class="blurb-paragraph">80 King Street, Suite 900, St. Catharines, ON L2R 6Y8<a href="http://www.flettbeccario.com/" target="_blank" class="link">‍</a>
-              </div>
-              <div class="blurb-paragraph">Phone: (905) 688-4500 x. 715</div>
-              <div class="blurb-paragraph">Fax: (905) 688-0015</div>
-              <div class="columns-2 w-row">
-                <div class="column-4 w-col w-col-6 w-col-small-6 w-col-tiny-6">
-                  <a href="mailto:pmbauerle@chownlaw.com" class="link-block-3 w-inline-block"><img src="{% static 'images/email.png' %}" loading="lazy" srcset="{% static 'images/email-p-500.png' %} 500w, {% static 'images/email.png' %} 512w" sizes="40px" alt="" class="image-26"></a>
-                </div>
-                <div class="column-3 w-col w-col-6 w-col-small-6 w-col-tiny-6">
-                  <a href="#" target="_blank" class="link-block-3 w-inline-block"><img src="{% static 'images/internet-2.png' %}" loading="lazy" srcset="{% static 'images/internet-2-p-500.png' %} 500w, {% static 'images/internet-2.png' %} 512w" sizes="40px" alt="" class="image-26"></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div data-filterkey="C" class="member-card">
-            <div class="member-content">
-              <h3 class="member-heading">Cahill, Sean</h3>
-              <h4 class="member-heading">Sullivan Mahoney LLP</h4>
-              <div class="blurb-paragraph">4781 Portage Road, Niagara Falls, ON L2E 6N1</div>
-              <div class="blurb-paragraph">Phone: (905) 357-3334</div>
-              <div class="blurb-paragraph">Fax: (905) 357-3336</div>
-              <div class="columns-2 w-row">
-                <div class="column-4 w-col w-col-6 w-col-small-6 w-col-tiny-6">
-                  <a href="mailto:scahill@sullivanmahoney.com &lt;scahill@sullivanmahoney.com&gt;;" class="link-block-3 w-inline-block"><img src="{% static 'images/email.png' %}" loading="lazy" srcset="{% static 'images/email-p-500.png' %} 500w, {% static 'images/email.png' %} 512w" sizes="40px" alt="" class="image-26"></a>
-                </div>
-                <div class="column-3 w-col w-col-6 w-col-small-6 w-col-tiny-6">
-                  <a href="https://sullivanmahoney.com/" target="_blank" class="link-block-3 w-inline-block"><img src="{% static 'images/internet-2.png' %}" loading="lazy" srcset="{% static 'images/internet-2-p-500.png' %} 500w, {% static 'images/internet-2.png' %} 512w" sizes="40px" alt="" class="image-26"></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div data-filterkey="A" class="member-card">
-            <div class="member-content">
-              <h3 class="member-heading">Adams, Alyssa</h3>
-              <h4 class="member-heading">Flett Beccario</h4>
-              <div class="blurb-paragraph">190 Division Street, P.O. Box 340 Welland, ON L3B 5P9<a href="http://www.flettbeccario.com/" target="_blank" class="link">‍</a>
-              </div>
-              <div class="blurb-paragraph">Phone: (905) 732-4481</div>
-              <div class="blurb-paragraph">Fax: (905) 732-2020</div>
-              <div class="columns-2 w-row">
-                <div class="column-4 w-col w-col-6 w-col-small-6 w-col-tiny-6">
-                  <a href="mailto:aadams@flettbeccario.com" class="link-block-3 w-inline-block"><img src="{% static 'images/email.png' %}" loading="lazy" srcset="{% static 'images/email-p-500.png' %} 500w, {% static 'images/email.png' %} 512w" sizes="40px" alt="" class="image-26"></a>
-                </div>
-                <div class="column-3 w-col w-col-6 w-col-small-6 w-col-tiny-6">
-                  <a href="http://www.flettbeccario.com/" target="_blank" class="link-block-3 w-inline-block"><img src="{% static 'images/internet-2.png' %}" loading="lazy" srcset="{% static 'images/internet-2-p-500.png' %} 500w, {% static 'images/internet-2.png' %} 512w" sizes="40px" alt="" class="image-26"></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div data-filterkey="A" class="member-card">
-            <div class="member-content">
-              <h3 class="member-heading">Adams, Alyssa</h3>
-              <h4 class="member-heading">Flett Beccario</h4>
-              <div class="blurb-paragraph">190 Division Street, P.O. Box 340 Welland, ON L3B 5P9<a href="http://www.flettbeccario.com/" target="_blank" class="link">‍</a>
-              </div>
-              <div class="blurb-paragraph">Phone: (905) 732-4481</div>
-              <div class="blurb-paragraph">Fax: (905) 732-2020</div>
-              <div class="columns-2 w-row">
-                <div class="column-4 w-col w-col-6 w-col-small-6 w-col-tiny-6">
-                  <a href="mailto:aadams@flettbeccario.com" class="link-block-3 w-inline-block"><img src="{% static 'images/email.png' %}" loading="lazy" srcset="{% static 'images/email-p-500.png' %} 500w, {% static 'images/email.png' %} 512w" sizes="40px" alt="" class="image-26"></a>
-                </div>
-                <div class="column-3 w-col w-col-6 w-col-small-6 w-col-tiny-6">
-                  <a href="http://www.flettbeccario.com/" target="_blank" class="link-block-3 w-inline-block"><img src="{% static 'images/internet-2.png' %}" loading="lazy" srcset="{% static 'images/internet-2-p-500.png' %} 500w, {% static 'images/internet-2.png' %} 512w" sizes="40px" alt="" class="image-26"></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div data-filterkey="A" class="member-card">
-            <div class="member-content">
-              <h3 class="member-heading">Adams, Alyssa</h3>
-              <h4 class="member-heading">Flett Beccario</h4>
-              <div class="blurb-paragraph">190 Division Street, P.O. Box 340 Welland, ON L3B 5P9<a href="http://www.flettbeccario.com/" target="_blank" class="link">‍</a>
-              </div>
-              <div class="blurb-paragraph">Phone: (905) 732-4481</div>
-              <div class="blurb-paragraph">Fax: (905) 732-2020</div>
-              <div class="columns-2 w-row">
-                <div class="column-4 w-col w-col-6 w-col-small-6 w-col-tiny-6">
-                  <a href="mailto:aadams@flettbeccario.com" class="link-block-3 w-inline-block"><img src="{% static 'images/email.png' %}" loading="lazy" srcset="{% static 'images/email-p-500.png' %} 500w, {% static 'images/email.png' %} 512w" sizes="40px" alt="" class="image-26"></a>
-                </div>
-                <div class="column-3 w-col w-col-6 w-col-small-6 w-col-tiny-6">
-                  <a href="http://www.flettbeccario.com/" target="_blank" class="link-block-3 w-inline-block"><img src="{% static 'images/internet-2.png' %}" loading="lazy" srcset="{% static 'images/internet-2-p-500.png' %} 500w, {% static 'images/internet-2.png' %} 512w" sizes="40px" alt="" class="image-26"></a>
-                </div>
-              </div>
-            </div>
-          </div>
+          {% endfor %}
+
         </div>
       </div>
+
       <div class="new-section wf-section">
         <h1 id="w-node-_4d652a7b-e518-e33b-ca42-6e82682479e9-2f443d32" class="heading-mobile">Benefits of Becoming a Member</h1>
         <div class="w-layout-grid benefits-grid">
@@ -285,7 +202,19 @@
                 <p class="paragraph-11">Please fill the form below to become a member. Feel free to add as much detail as needed.</p>
               </div>
               <div class="multi-step-form-block---brix w-form">
-                <form id="wf-form-Multi-step-Form-Preview" name="wf-form-Multi-step-Form-Preview" data-name="Multi-step Form Preview" method="get" class="multi-step-form---brix">
+
+                <div class="cloneable-container-default-2">
+                  {% for mssg in messages %}
+                       <div class="alert alert-warning alert-dismissible fade show" role="alert" style="text-align: center;
+                        background-color: #8d8d79; color: #ffffff;border-radius: 5px;">
+                          <strong>{{mssg}}</strong>
+              
+                        </div>
+                  {% endfor %}
+                </div>
+
+                <form id="wf-form-Multi-step-Form-Preview" name="wf-form-Multi-step-Form-Preview" data-name="Multi-step Form Preview" method="POST" action=" " class="multi-step-form---brix">
+                  {% csrf_token %}
                   <div data-delay="4000" data-animation="slide" class="slider---brix w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="true" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="false">
                     <div class="mask---brix w-slider-mask">
                       <div class="slide---brix w-slide">
@@ -402,6 +331,9 @@
                     <div class="display-none w-slider-nav w-round"></div>
                   </div>
                 </form>
+
+
+
                 <div class="multi-step-foirm---success-message---brix w-form-done">
                   <div class="submit-content-wrapper---brix"><img src="{% static 'images/form-check-multi-step-form-webflow-cloneable-template-brix-templates.svg' %}" alt="" class="completed-form-illustrations---brix">
                     <h3 class="step-title---brix">Thank you! Your submission has been received!</h3>
