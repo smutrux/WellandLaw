@@ -14,6 +14,34 @@ def careercentre(request):
     return render(request, 'career-centre.html')
 
 def contactus(request):
+
+
+    if request.method == 'POST':
+        # Retrieving the form's information
+        name = request.POST['name']
+        email = request.POST['Email-Address']
+        phone = request.POST['Phone-Number']
+        firm = request.POST['Firm-Name']      
+        subject = request.POST['field'] 
+        message = request.POST['Message']
+
+        # intialize the variables for email and backend
+
+        subject = "Contact: " + name + " - " + subject
+        message = "Phone #: " + phone + "\n" +  "Email: " + email + "\n" + "Firm: " + firm + "\n" + message
+
+        send_mail( 
+            subject,
+            message,
+            email, 
+            [settings.EMAIL_HOST_USER], 
+            fail_silently=False,
+            )
+
+        messages.add_message(request, messages.SUCCESS,'Your inquiry has been submitted successfully. We will get back to you shortly.')
+
+        return redirect('contact-us')
+
     return render(request, 'contact-us.html')
 
 def cpdevents(request):
