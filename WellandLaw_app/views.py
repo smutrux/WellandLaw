@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from . models import MemberForm
+from . models import MemberForm, Event
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.conf import settings
@@ -45,7 +45,9 @@ def contactus(request):
     return render(request, 'contact-us.html')
 
 def cpdevents(request):
-    return render(request, 'cpd-events.html')
+    function = Event.objects.order_by('date').all()
+    context = {'function': function}
+    return render(request, 'cpd-events.html', context)
 
 def eventsdetails(request, pk):
     return render(request, 'events-details.html')
