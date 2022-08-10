@@ -103,176 +103,48 @@
         <div class="new-section-vertical wf-section">
           <h2 class="heading-mobile">Meet Our Executive Team</h2>
           <div data-delay="4000" data-animation="slide" class="desktop-slider w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
+            
             <div class="mask-3 w-slider-mask">
+
+              {% for member in board %}
+              
+              {% if forloop.first %}
               <div class="slider-size-2 w-slide">
                 <div class="w-layout-grid grid-3 slide1">
-                  <div id="w-node-f5b37313-147e-cba1-fce4-9314816dc147-780505ab" class="membership-cards"><img src="{% static 'images/alexander-grigoryev-kcxDSdSebms-unsplash.jpg' %}" loading="lazy" srcset="{% static 'images/alexander-grigoryev-kcxDSdSebms-unsplash-p-500.jpeg' %} 500w, {% static 'images/alexander-grigoryev-kcxDSdSebms-unsplash.jpg' %} 800w" sizes="(max-width: 767px) 100vw, 300px" alt="" class="membership-img">
-                    <div class="membership-info">
-                      <h3>SLYVANNIA BECKERSON</h3>
-                      <div>President</div>
-                      <div>ashley@gnrlaw.ca</div>
-                    </div>
-                  </div>
-                  <div id="w-node-b5d87741-183c-0b7a-91ee-c611f9245597-780505ab" class="membership-cards"><img src="{% static 'images/isaac-quesada-w8--SP1DLEw-unsplash.jpg' %}" loading="lazy" srcset="{% static 'images/isaac-quesada-w8--SP1DLEw-unsplash-p-500.jpeg' %} 500w, {% static 'images/isaac-quesada-w8--SP1DLEw-unsplash-p-800.jpeg' %} 800w, {% static 'images/isaac-quesada-w8--SP1DLEw-unsplash-p-1080.jpeg' %} 1080w, {% static 'images/isaac-quesada-w8--SP1DLEw-unsplash.jpg' %} 1200w" sizes="(max-width: 767px) 100vw, 300px" alt="" class="membership-img">
-                    <div class="membership-info">
-                      <h3>SLYVANNIA BECKERSON</h3>
-                      <div>President</div>
-                      <div>ashley@gnrlaw.ca</div>
-                    </div>
-                  </div>
-                  <div id="w-node-_7e1356b0-0afd-bcf2-9d30-81bdb3f5383c-780505ab" class="membership-cards"><img src="{% static 'images/alexander-grigoryev-kcxDSdSebms-unsplash.jpg' %}" loading="lazy" srcset="{% static 'images/alexander-grigoryev-kcxDSdSebms-unsplash-p-500.jpeg' %} 500w, {% static 'images/alexander-grigoryev-kcxDSdSebms-unsplash.jpg' %} 800w" sizes="(max-width: 767px) 100vw, 300px" alt="" class="membership-img">
-                    <div class="membership-info">
-                      <h3>SLYVANNIA BECKERSON</h3>
-                      <div>President</div>
-                      <div>ashley@gnrlaw.ca</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              
+              {% elif forloop.counter|divisibleby:4 %}
               <div class="slider-size-2 w-slide">
                 <div class="w-layout-grid grid-3 slide1">
-                  <div id="w-node-_3b1538e4-52fc-d0dd-e1b3-32b1e8673e20-780505ab" class="membership-cards"><img src="{% static 'images/alexander-grigoryev-kcxDSdSebms-unsplash.jpg' %}" loading="lazy" srcset="{% static 'images/alexander-grigoryev-kcxDSdSebms-unsplash-p-500.jpeg' %} 500w, {% static 'images/alexander-grigoryev-kcxDSdSebms-unsplash.jpg' %} 800w" sizes="(max-width: 767px) 100vw, 300px" alt="" class="membership-img">
+              
+              {% endif %}
+              
+
+                  <div id="w-node-f5b37313-147e-cba1-fce4-9314816dc147-780505ab" class="membership-cards"><img src="{{member.image.url}}" loading="lazy" srcset="{{member.image.url}} 500w, {{member.image.url}} 800w" sizes="(max-width: 767px) 100vw, 300px" alt="" class="membership-img">
                     <div class="membership-info">
-                      <h3>SLYVANNIA BECKERSON</h3>
-                      <div>President</div>
-                      <div>ashley@gnrlaw.ca</div>
+                      <h3>{{member.name}}</h3>
+                      <div>{{member.position}}</div>
+                      <div>{{member.email}}</div>
                     </div>
                   </div>
-                  <div id="w-node-_3b1538e4-52fc-d0dd-e1b3-32b1e8673e29-780505ab" class="membership-cards"><img src="{% static 'images/isaac-quesada-w8--SP1DLEw-unsplash.jpg' %}" loading="lazy" srcset="{% static 'images/isaac-quesada-w8--SP1DLEw-unsplash-p-500.jpeg' %} 500w, {% static 'images/isaac-quesada-w8--SP1DLEw-unsplash-p-800.jpeg' %} 800w, {% static 'images/isaac-quesada-w8--SP1DLEw-unsplash-p-1080.jpeg' %} 1080w, {% static 'images/isaac-quesada-w8--SP1DLEw-unsplash.jpg' %} 1200w" sizes="(max-width: 767px) 100vw, 300px" alt="" class="membership-img">
-                    <div class="membership-info">
-                      <h3>SLYVANNIA BECKERSON</h3>
-                      <div>President</div>
-                      <div>ashley@gnrlaw.ca</div>
-                    </div>
-                  </div>
-                  <div id="w-node-_3b1538e4-52fc-d0dd-e1b3-32b1e8673e32-780505ab" class="membership-cards"><img src="{% static 'images/alexander-grigoryev-kcxDSdSebms-unsplash.jpg' %}" loading="lazy" srcset="{% static 'images/alexander-grigoryev-kcxDSdSebms-unsplash-p-500.jpeg' %} 500w, {% static 'images/alexander-grigoryev-kcxDSdSebms-unsplash.jpg' %} 800w" sizes="(max-width: 767px) 100vw, 300px" alt="" class="membership-img">
-                    <div class="membership-info">
-                      <h3>SLYVANNIA BECKERSON</h3>
-                      <div>President</div>
-                      <div>ashley@gnrlaw.ca</div>
-                    </div>
-                  </div>
+
+              {% if forloop.counter|divisibleby:3 %}
                 </div>
               </div>
+              
+              {% elif forloop.last %}
+                </div>
+              </div>
+              {% endif %}
+
+              {% endfor %}
+
             </div>
+
             <div class="left-arrow-3 w-slider-arrow-left"></div>
             <div class="right-arrow-4 w-slider-arrow-right"></div>
             <div class="slide-nav w-slider-nav w-slider-nav-invert w-round"></div>
           </div>
-          <div data-delay="4000" data-animation="slide" class="desktop-slider-copy new-section w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
-            <div class="mask-3 w-slider-mask">
-              <div class="slider-size-2 w-slide">
-                <div class="w-layout-grid grid-3 slide1">
-                  <div id="w-node-_60837c7c-19b1-77dc-6968-41ffb71e64d8-780505ab" class="membership-cards"><img src="{% static 'images/alexander-grigoryev-kcxDSdSebms-unsplash.jpg' %}" loading="lazy" srcset="{% static 'images/alexander-grigoryev-kcxDSdSebms-unsplash-p-500.jpeg' %} 500w, {% static 'images/alexander-grigoryev-kcxDSdSebms-unsplash.jpg' %} 800w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 200px, 100vw" alt="" class="membership-img">
-                    <div class="membership-info">
-                      <h3>SLYVANNIA BECKERSON</h3>
-                      <div>President</div>
-                      <div>ashley@gnrlaw.ca</div>
-                    </div>
-                  </div>
-                  <div id="w-node-_60837c7c-19b1-77dc-6968-41ffb71e64e1-780505ab" class="membership-cards"><img src="{% static 'images/isaac-quesada-w8--SP1DLEw-unsplash.jpg' %}" loading="lazy" srcset="{% static 'images/isaac-quesada-w8--SP1DLEw-unsplash-p-500.jpeg' %} 500w, {% static 'images/isaac-quesada-w8--SP1DLEw-unsplash-p-800.jpeg' %} 800w, {% static 'images/isaac-quesada-w8--SP1DLEw-unsplash-p-1080.jpeg' %} 1080w, {% static 'images/isaac-quesada-w8--SP1DLEw-unsplash.jpg' %} 1200w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 200px, 100vw" alt="" class="membership-img">
-                    <div class="membership-info">
-                      <h3>SLYVANNIA BECKERSON</h3>
-                      <div>President</div>
-                      <div>ashley@gnrlaw.ca</div>
-                    </div>
-                  </div>
-                  <div id="w-node-_60837c7c-19b1-77dc-6968-41ffb71e64ea-780505ab" class="membership-cards"><img src="{% static 'images/alexander-grigoryev-kcxDSdSebms-unsplash.jpg' %}" loading="lazy" srcset="{% static 'images/alexander-grigoryev-kcxDSdSebms-unsplash-p-500.jpeg' %} 500w, {% static 'images/alexander-grigoryev-kcxDSdSebms-unsplash.jpg' %} 800w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 200px, 100vw" alt="" class="membership-img">
-                    <div class="membership-info">
-                      <h3>SLYVANNIA BECKERSON</h3>
-                      <div>President</div>
-                      <div>ashley@gnrlaw.ca</div>
-                    </div>
-                  </div>
-                  <div id="w-node-_78778fcc-5aae-8f58-ce90-90a744d4e370-780505ab" class="membership-cards"><img src="{% static 'images/alexander-grigoryev-kcxDSdSebms-unsplash.jpg' %}" loading="lazy" srcset="{% static 'images/alexander-grigoryev-kcxDSdSebms-unsplash-p-500.jpeg' %} 500w, {% static 'images/alexander-grigoryev-kcxDSdSebms-unsplash.jpg' %} 800w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 200px, 100vw" alt="" class="membership-img">
-                    <div class="membership-info">
-                      <h3>SLYVANNIA BECKERSON</h3>
-                      <div>President</div>
-                      <div>ashley@gnrlaw.ca</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="slider-size-2 w-slide">
-                <div class="w-layout-grid grid-3 slide1">
-                  <div id="w-node-_9db1ac19-deaf-dd08-6dcc-f470e93af93b-780505ab" class="membership-cards"><img src="{% static 'images/alexander-grigoryev-kcxDSdSebms-unsplash.jpg' %}" loading="lazy" srcset="{% static 'images/alexander-grigoryev-kcxDSdSebms-unsplash-p-500.jpeg' %} 500w, {% static 'images/alexander-grigoryev-kcxDSdSebms-unsplash.jpg' %} 800w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 200px, 100vw" alt="" class="membership-img">
-                    <div class="membership-info">
-                      <h3>SLYVANNIA BECKERSON</h3>
-                      <div>President</div>
-                      <div>ashley@gnrlaw.ca</div>
-                    </div>
-                  </div>
-                  <div id="w-node-_9db1ac19-deaf-dd08-6dcc-f470e93af944-780505ab" class="membership-cards"><img src="{% static 'images/isaac-quesada-w8--SP1DLEw-unsplash.jpg' %}" loading="lazy" srcset="{% static 'images/isaac-quesada-w8--SP1DLEw-unsplash-p-500.jpeg' %} 500w, {% static 'images/isaac-quesada-w8--SP1DLEw-unsplash-p-800.jpeg' %} 800w, {% static 'images/isaac-quesada-w8--SP1DLEw-unsplash-p-1080.jpeg' %} 1080w, {% static 'images/isaac-quesada-w8--SP1DLEw-unsplash.jpg' %} 1200w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 200px, 100vw" alt="" class="membership-img">
-                    <div class="membership-info">
-                      <h3>SLYVANNIA BECKERSON</h3>
-                      <div>President</div>
-                      <div>ashley@gnrlaw.ca</div>
-                    </div>
-                  </div>
-                  <div id="w-node-_9db1ac19-deaf-dd08-6dcc-f470e93af94d-780505ab" class="membership-cards"><img src="{% static 'images/alexander-grigoryev-kcxDSdSebms-unsplash.jpg' %}" loading="lazy" srcset="{% static 'images/alexander-grigoryev-kcxDSdSebms-unsplash-p-500.jpeg' %} 500w, {% static 'images/alexander-grigoryev-kcxDSdSebms-unsplash.jpg' %} 800w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 200px, 100vw" alt="" class="membership-img">
-                    <div class="membership-info">
-                      <h3>SLYVANNIA BECKERSON</h3>
-                      <div>President</div>
-                      <div>ashley@gnrlaw.ca</div>
-                    </div>
-                  </div>
-                  <div id="w-node-_9db1ac19-deaf-dd08-6dcc-f470e93af956-780505ab" class="membership-cards"><img src="{% static 'images/alexander-grigoryev-kcxDSdSebms-unsplash.jpg' %}" loading="lazy" srcset="{% static 'images/alexander-grigoryev-kcxDSdSebms-unsplash-p-500.jpeg' %} 500w, {% static 'images/alexander-grigoryev-kcxDSdSebms-unsplash.jpg' %} 800w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 200px, 100vw" alt="" class="membership-img">
-                    <div class="membership-info">
-                      <h3>SLYVANNIA BECKERSON</h3>
-                      <div>President</div>
-                      <div>ashley@gnrlaw.ca</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="left-arrow-3 w-slider-arrow-left"></div>
-            <div class="right-arrow-4 w-slider-arrow-right"></div>
-            <div class="slide-nav w-slider-nav w-slider-nav-invert w-round"></div>
-          </div>
-          <div data-delay="4000" data-animation="slide" class="desktop-slider-copy-copy new-section teamcase w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
-            <div class="mask-3 w-slider-mask">
-              <div class="slider-size-2 w-slide">
-                <div class="w-layout-grid grid-3 slide1">
-                  <div id="w-node-_5dad534a-852b-04ce-dcfd-ce29bc884942-780505ab" class="membership-cards"><img src="{% static 'images/alexander-grigoryev-kcxDSdSebms-unsplash.jpg' %}" loading="lazy" srcset="{% static 'images/alexander-grigoryev-kcxDSdSebms-unsplash-p-500.jpeg' %} 500w, {% static 'images/alexander-grigoryev-kcxDSdSebms-unsplash.jpg' %} 800w" sizes="(max-width: 479px) 200px, 100vw" alt="" class="membership-img">
-                    <div class="membership-info">
-                      <h3>SLYVANNIA BECKERSON</h3>
-                      <div>President</div>
-                      <div class="text-block-5">ashley@gnrlaw.ca</div>
-                    </div>
-                  </div>
-                  <div id="w-node-_5dad534a-852b-04ce-dcfd-ce29bc88494b-780505ab" class="membership-cards"><img src="{% static 'images/isaac-quesada-w8--SP1DLEw-unsplash.jpg' %}" loading="lazy" srcset="{% static 'images/isaac-quesada-w8--SP1DLEw-unsplash-p-500.jpeg' %} 500w, {% static 'images/isaac-quesada-w8--SP1DLEw-unsplash-p-800.jpeg' %} 800w, {% static 'images/isaac-quesada-w8--SP1DLEw-unsplash-p-1080.jpeg' %} 1080w, {% static 'images/isaac-quesada-w8--SP1DLEw-unsplash.jpg' %} 1200w" sizes="(max-width: 479px) 200px, 100vw" alt="" class="membership-img">
-                    <div class="membership-info">
-                      <h3>SLYVANNIA BECKERSON</h3>
-                      <div>President</div>
-                      <div class="text-block-6">ashley@gnrlaw.ca</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="slider-size-2 w-slide">
-                <div class="w-layout-grid grid-3 slide1">
-                  <div id="w-node-_709a3b10-54b0-98d8-d82c-a093baf90eba-780505ab" class="membership-cards"><img src="{% static 'images/alexander-grigoryev-kcxDSdSebms-unsplash.jpg' %}" loading="lazy" srcset="{% static 'images/alexander-grigoryev-kcxDSdSebms-unsplash-p-500.jpeg' %} 500w, {% static 'images/alexander-grigoryev-kcxDSdSebms-unsplash.jpg' %} 800w" sizes="(max-width: 479px) 200px, 100vw" alt="" class="membership-img">
-                    <div class="membership-info">
-                      <h3>SLYVANNIA BECKERSON</h3>
-                      <div>President</div>
-                      <div class="text-block-5">ashley@gnrlaw.ca</div>
-                    </div>
-                  </div>
-                  <div id="w-node-_709a3b10-54b0-98d8-d82c-a093baf90ec3-780505ab" class="membership-cards"><img src="{% static 'images/isaac-quesada-w8--SP1DLEw-unsplash.jpg' %}" loading="lazy" srcset="{% static 'images/isaac-quesada-w8--SP1DLEw-unsplash-p-500.jpeg' %} 500w, {% static 'images/isaac-quesada-w8--SP1DLEw-unsplash-p-800.jpeg' %} 800w, {% static 'images/isaac-quesada-w8--SP1DLEw-unsplash-p-1080.jpeg' %} 1080w, {% static 'images/isaac-quesada-w8--SP1DLEw-unsplash.jpg' %} 1200w" sizes="(max-width: 479px) 200px, 100vw" alt="" class="membership-img">
-                    <div class="membership-info">
-                      <h3>SLYVANNIA BECKERSON</h3>
-                      <div>President</div>
-                      <div class="text-block-6">ashley@gnrlaw.ca</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="left-arrow-2 w-slider-arrow-left"></div>
-            <div class="right-arrow-4 w-slider-arrow-right"></div>
-            <div class="slide-nav w-slider-nav w-slider-nav-invert w-round"></div>
-          </div>
+          
         </div>
       </div>
     </div>

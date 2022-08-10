@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'WellandLaw_app.apps.WellandlawAppConfig',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [

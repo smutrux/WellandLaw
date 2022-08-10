@@ -13,6 +13,5 @@ urlpatterns = [
     path('membership-page/', views.membershippage, name="membership-page"),
     path('practice-portals/', views.practiceportals, name="practice-portals"),
     path('public-resourcess/', views.publicresources, name="public-resources"),
-    path('test/', views.test, name="test"),
     
 ]

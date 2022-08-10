@@ -1,16 +1,47 @@
 from django.shortcuts import render, redirect
-from . models import MemberForm, Event
+from . models import Members, Event, BoardMember, PublicResources, Library, PracticePortal
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.conf import settings
 
+
 def index(request):
-    return render(request, 'index.html')
+    events = Event.objects.order_by('date').all()
+    context = {'events': events}
+    return render(request, 'index.html', context)
 
 def aboutus(request):
-    return render(request, 'about-us.html')
+    board = BoardMember.objects.all()
+    context = {'board': board}
+    return render(request, 'about-us.html', context)
 
 def careercentre(request):
+
+    if request.method == 'POST':
+        # Retrieving the form's information
+        name = request.POST['name']
+        email = request.POST['Email-Address']
+        phone = request.POST['Phone-Number']
+        title = request.POST['Firm-Name']      
+        catagory = request.POST['field']
+
+        # intialize the variables for email and backend
+
+        subject = "Ad slot request: " + name
+        message = "Phone #: " + phone + "\n" +  "Email: " + email + "\n" + "Title of Ad: " + title + "\n" + "Catagory: " + catagory
+
+        send_mail( 
+            subject,
+            message,
+            email, 
+            [settings.EMAIL_HOST_USER], 
+            fail_silently=False,
+            )
+
+        messages.add_message(request, messages.SUCCESS,'Your inquiry has been submitted successfully. We will get back to you shortly.')
+
+        return redirect('career-centre')
+
     return render(request, 'career-centre.html')
 
 def contactus(request):
@@ -45,21 +76,20 @@ def contactus(request):
     return render(request, 'contact-us.html')
 
 def cpdevents(request):
-    function = Event.objects.order_by('date').all()
-    context = {'function': function}
+    events = Event.objects.order_by('date').all()
+    context = {'events': events}
     return render(request, 'cpd-events.html', context)
 
 def eventsdetails(request, pk):
-    return render(request, 'events-details.html')
+    event = Event.objects.get(id=pk)
+    context = {'event': event}
+    return render(request, 'events-details.html', context)
 
 def landingpage(request):
     return render(request, 'landing-page.html')
 
-def library(request):
-    return render(request, 'library.html')
-
 def membershippage(request):
-    members = MemberForm.objects.all()
+    members = Members.objects.all()
 
     if request.method == 'POST':
         # Retrieving the form's information
@@ -103,11 +133,18 @@ def membershippage(request):
     return render(request, 'membership-page.html', context)
 
 def practiceportals(request):
-    return render(request, 'practice-portals.html')
+    sections = PracticePortal.objects.all()
+    context = {'sections': sections}
+    return render(request, 'practice-portals.html', context)
+
+def library(request):
+    sections = Library.objects.all()
+    context = {'sections': sections}
+    return render(request, 'library.html', context)
 
 def publicresources(request):
-    return render(request, 'public-resources.html')
+    resources = PublicResources.objects.all()
+    context = {'resources': resources}
+    return render(request, 'public-resources.html', context)
 
-def test(request):
-    return render(request, 'test.html')
 

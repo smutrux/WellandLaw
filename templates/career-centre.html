@@ -105,7 +105,8 @@
         <h2 class="heading-33">Fill Out This Form to Request an Ad Slot</h2>
         <div class="div-block-16">
           <div class="form-block-2 w-form">
-            <form id="wf-form-Full-Name" name="wf-form-Full-Name" data-name="Full Name" method="get" class="centered-form">
+            <form id="wf-form-Full-Name" name="wf-form-Full-Name" data-name="Full Name" method="POST" action=" " class="centered-form">
+              {% csrf_token %}
               <div class="contact-form">
                 <div class="w-layout-grid grid">
                   <div id="w-node-f200ca6b-4f43-7d64-fa4a-25bca5d4b1cc-750505ac"><label for="name" class="field-label">Contact Name for Posting *</label><input type="text" class="w-input" maxlength="256" name="name" data-name="Name" placeholder="John Doe" id="name" required=""></div>

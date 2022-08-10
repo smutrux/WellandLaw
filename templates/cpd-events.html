@@ -34,7 +34,7 @@
       <div class="new-section-3 contact wf-section">
         <div class="centering-container w-container">
           <div class="w-layout-grid grid-events">
-          {% for event in function %}
+          {% for event in events %}
                 <div class="w-layout-grid grid-11"><img src="{{event.image.url}}" loading="lazy" width="462" id="w-node-cf3427c2-c407-750c-ac22-6d46dbb75a3e-7f0505ae" sizes="(max-width: 479px) 76vw, (max-width: 767px) 63vw, (max-width: 991px) 56vw, 462px" srcset="{{event.image.url}} 500w, {{event.image.url} 640w" alt="" class="image-35">
                   <div id="w-node-cf3427c2-c407-750c-ac22-6d46dbb75a3f-7f0505ae" class="details">
                     <h1 id="w-node-cf3427c2-c407-750c-ac22-6d46dbb75a40-7f0505ae" class="card-title">{{event.title}}</h1>
@@ -49,7 +49,7 @@
                       </div>
                     </div>
                     <div class="learn-more">
-                      <a href="events-details.html" class="new-button-3 w-button">Learn More</a>
+                      <a href="{% url 'events-details' event.id %}" class="new-button-3 w-button">Learn More</a>
                     </div>
                   </div>
                 </div>

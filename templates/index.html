@@ -71,46 +71,21 @@
             <div class="div-block-19">
               <div data-delay="10000" data-animation="slide" class="slider-size-4 w-slider" data-autoplay="true" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
                 <div class="w-slider-mask">
+
+                  <!-- Here -->
+                  {% for event in events %}
                   <div class="slide w-slide">
                     <div data-w-id="1b5b81b5-8fbc-5c93-52af-70a92d9e0fb2" class="slider-content-2"><img src="{% static 'images/Header.png' %}" loading="lazy" srcset="{% static 'images/Header-p-500.png' %} 500w, {% static 'images/Header-p-800.png' %} 800w, {% static 'images/Header.png' %} 1000w" sizes="(max-width: 767px) 100vw, (max-width: 991px) 76vw, 98vw" alt="" class="image-13">
                       <div data-w-id="1b5b81b5-8fbc-5c93-52af-70a92d9e0fb4" class="div-block-26 w-clearfix">
-                        <h1 id="Head" class="slider-heading">UPCOMING EVENTS</h1>
-                        <div class="slider-text">Using real-life situations in an interactive roundtable format, our panel of in-house counsel, firm practitioners and paralegals takes on the ethical challenges you may face in your employment law practice.</div>
-                        <a href="cpd-events.html" class="new-button-2 slider w-button"><strong>Learn More</strong></a>
+                        <h1 id="Head" class="slider-heading">{{event.title}}</h1>
+                        <div class="slider-text">{{event.description|safe}}</div>
+                        <a href="{% url 'cpd-events' %}" class="new-button-2 slider w-button"><strong>Learn More</strong></a>
                       </div>
                       <div class="learnmorebtn-div"></div>
                     </div>
                   </div>
-                  <div class="slide w-slide">
-                    <div data-w-id="2eb5e075-fe0b-d236-a5da-88cb127bd679" class="slider-content-2"><img src="{% static 'images/Header.png' %}" loading="lazy" srcset="{% static 'images/Header-p-500.png' %} 500w, {% static 'images/Header-p-800.png' %} 800w, {% static 'images/Header.png' %} 1000w" sizes="(max-width: 767px) 100vw, (max-width: 991px) 76vw, 98vw" alt="" class="image-13">
-                      <div class="div-block-26 w-clearfix">
-                        <h1 id="Head" class="slider-heading">UPCOMING EVENTS</h1>
-                        <div class="slider-text">Using real-life situations in an interactive roundtable format, our panel of in-house counsel, firm practitioners and paralegals takes on the ethical challenges you may face in your employment law practice.</div>
-                        <a href="cpd-events.html" class="new-button-2 slider w-button">Learn More</a>
-                      </div>
-                      <div class="learnmorebtn-div"></div>
-                    </div>
-                  </div>
-                  <div class="slide w-slide">
-                    <div data-w-id="ae58a01b-cc3e-ccf2-8168-1b4293aa69d1" class="slider-content-2"><img src="{% static 'images/Header.png' %}" loading="lazy" srcset="{% static 'images/Header-p-500.png' %} 500w, {% static 'images/Header-p-800.png' %} 800w, {% static 'images/Header.png' %} 1000w" sizes="(max-width: 767px) 100vw, (max-width: 991px) 76vw, 98vw" alt="" class="image-13">
-                      <div class="div-block-26 w-clearfix">
-                        <h1 id="Head" class="slider-heading">UPCOMING EVENTS</h1>
-                        <div class="slider-text">Using real-life situations in an interactive roundtable format, our panel of in-house counsel, firm practitioners and paralegals takes on the ethical challenges you may face in your employment law practice.</div>
-                        <a href="cpd-events.html" class="new-button-2 slider w-button">Learn More</a>
-                      </div>
-                      <div class="learnmorebtn-div"></div>
-                    </div>
-                  </div>
-                  <div class="slide w-slide">
-                    <div data-w-id="e9bcdc8b-86fd-5d9d-87e2-53118e7b630c" class="slider-content-2"><img src="{% static 'images/Header.png' %}" loading="lazy" srcset="{% static 'images/Header-p-500.png' %} 500w, {% static 'images/Header-p-800.png' %} 800w, {% static 'images/Header.png' %} 1000w" sizes="(max-width: 767px) 100vw, (max-width: 991px) 76vw, 98vw" alt="" class="image-13">
-                      <div class="div-block-26 w-clearfix">
-                        <h1 id="Head" class="slider-heading">UPCOMING EVENTS</h1>
-                        <div class="slider-text">Using real-life situations in an interactive roundtable format, our panel of in-house counsel, firm practitioners and paralegals takes on the ethical challenges you may face in your employment law practice.</div>
-                        <a href="cpd-events.html" class="new-button-2 slider w-button">Learn More</a>
-                      </div>
-                      <div class="learnmorebtn-div"></div>
-                    </div>
-                  </div>
+                  {% endfor %}
+
                 </div>
                 <div class="left-arrow-5 w-slider-arrow-left"></div>
                 <div class="right-arrow-6 w-slider-arrow-right"></div>
@@ -118,12 +93,14 @@
               </div>
             </div>
           </div>
+
           <div class="section wf-section">
             <div class="html-embed w-embed w-script">
               <a class="twitter-timeline" href="https://twitter.com/joerogan?ref_src=twsrc%5Etfw" data-tweet-limit="2">Our Tweets</a>
               <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>
           </div>
+          
         </div>
       </div>
     </div>

@@ -40,34 +40,43 @@
       <div class="new-section legal-resources wf-section">
         <div class="container-3 w-container">
           <div class="second-example-with-unterline">
-            <div data-current="Tab 1" data-easing="ease-in-out" data-duration-in="300" data-duration-out="300" class="tabs w-tabs">
+            <div data-current="1" data-easing="ease-in-out" data-duration-in="300" data-duration-out="300" class="tabs w-tabs">
               <div class="tabs-menu-underline-wrapper w-tab-menu">
-                <a data-w-tab="Tab 1" class="tabs-nav-item-underline _01 w-inline-block w-tab-link w--current">
-                  <div class="tabs-nav-text">Legal Resources</div>
+
+                <!-- List the Tab Headings here -->
+                {% for section in sections %}
+                <a data-w-tab="{{section.id}}" class="tabs-nav-item-underline _01 w-inline-block w-tab-link w--current">
+                  <div class="tabs-nav-text">{{section.title}}</div>
                   <div class="tabs-nav-unterline"></div>
                 </a>
-                <a data-w-tab="Tab 2" class="tabs-nav-item-underline _02 w-inline-block w-tab-link">
-                  <div class="tabs-nav-text">Research Services</div>
-                </a>
-                <a data-w-tab="Tab 3" class="tabs-nav-item-underline _03 w-inline-block w-tab-link">
-                  <div class="tabs-nav-text">Interlibrary Loan</div>
-                </a>
+
+                {% endfor %}
+                <!-- End Here -->
+
               </div>
               <div class="tabs-content-wrapper w-tab-content">
-                <div data-w-tab="Tab 1" class="tab-content-item w-tab-pane w--tab-active">
+
+                <!-- Place sections Here -->
+                {% for section in sections %}
+
+                <div data-w-tab="{{section.id}}" class="tab-content-item w-tab-pane w--tab-active">
                   <div class="tab-content">
                     <div class="resource">
                       <div class="w-layout-grid grid-14">
                         <div id="w-node-_04037700-6722-f158-0c70-abf1e5117eb2-fd0505b1" class="resource-pic">
-                          <h1 class="heading-mobile">Legal Resources</h1><img sizes="(max-width: 479px) 100vw, (max-width: 767px) 79vw, (max-width: 991px) 55vw, 500px" width="282" srcset="{% static 'images/Why-Choose-Our-Criminal-Lawyers-In-Saskatoon-p-500.jpg' %} 500w, {% static 'images/Why-Choose-Our-Criminal-Lawyers-In-Saskatoon-p-800.jpg' %} 800w, {% static 'images/Why-Choose-Our-Criminal-Lawyers-In-Saskatoon-p-1080.jpg' %} 1080w, {% static 'images/Why-Choose-Our-Criminal-Lawyers-In-Saskatoon-p-1600.jpg' %} 1600w, {% static 'images/Why-Choose-Our-Criminal-Lawyers-In-Saskatoon.jpg' %} 1620w" src="{% static 'images/Why-Choose-Our-Criminal-Lawyers-In-Saskatoon.jpg' %}" loading="lazy" alt="" class="image-44">
+                          <h1 class="heading-mobile">{{section.title}}</h1><img sizes="(max-width: 479px) 100vw, (max-width: 767px) 79vw, (max-width: 991px) 55vw, 500px" width="282" srcset="{{section.image.url}} 500w, {{section.image.url}} 800w, {{section.image.url}} 1080w, {{section.image.url}} 1600w, {{section.image.url}} 1620w" src="{{section.image.url}}" loading="lazy" alt="" class="image-44">
                         </div>
                         <div class="resource-content">
-                          <p id="w-node-_17748a09-65e9-768f-e349-ea86a52c40bc-fd0505b1" class="paragraph-19">We are also proud to offer access to the following online resources (in-library only): <br> - Westlaw Canada <em>(CriminalSource FamilySource, Estates &amp; TrustsSource)<br>- </em>Lexis Advance Quicklaw (including Practical Guidance, Context, Pleadings, Motions and Facta) <br>- O’Brien’s Encyclopedia of Forms Online <br>- Thomson Reuters ProView (select titles) <br>- Hein Online (password required through LSO) <br>- VLexJustis </p>
+                          {{section.content|safe}}
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
+
+                {% endfor %}
+                <!-- End Here -->
+
                 <div data-w-tab="Tab 2" class="tab-content-item w-tab-pane">
                   <div class="tab-content">
                     <div class="resource">
@@ -96,6 +105,8 @@
                     </div>
                   </div>
                 </div>
+
+
               </div>
             </div>
           </div>
