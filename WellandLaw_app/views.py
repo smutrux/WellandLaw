@@ -24,11 +24,12 @@ def careercentre(request):
         phone = request.POST['Phone-Number']
         title = request.POST['Firm-Name']      
         catagory = request.POST['field']
+        document = request.POST['file']
 
         # intialize the variables for email and backend
 
         subject = "Ad slot request: " + name
-        message = "Phone #: " + phone + "\n" +  "Email: " + email + "\n" + "Title of Ad: " + title + "\n" + "Catagory: " + catagory
+        message = "Phone #: " + phone + "\n" +  "Email: " + email + "\n" + "Title of Ad: " + title + "\n" + "Catagory: " + catagory + "\n" + "File: " + document
 
         send_mail( 
             subject,

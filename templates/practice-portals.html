@@ -1,4 +1,8 @@
 <!DOCTYPE html><!--  This site was created in Webflow. https://www.webflow.com  -->
+<<<<<<< Updated upstream
+=======
+{% load static %}
+>>>>>>> Stashed changes
 <!--  Last Published: Thu Aug 11 2022 15:57:55 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="62f411e0c7f4a5cf96771e79" data-wf-site="62d96ebd93ffb09c4e003d66">
 <head>
@@ -19,6 +23,7 @@
   <link href="images/webclip.png" rel="apple-touch-icon">
 </head>
 <body class="new-body">
+<<<<<<< Updated upstream
   <div data-animation="default" data-collapse="small" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar-3 w-nav">
     <div class="container w-container">
       <a href="#" class="brand w-nav-brand"><img width="62" loading="lazy" src="images/7.svg" alt="" class="image-12">
@@ -118,6 +123,11 @@
         <a href="https://www.civiconnect.ca/" target="_blank" class="w-nav-brand"><img src="images/CIVI.png" loading="lazy" alt="" class="image"></a>
       </div>
     </div>
+=======
+  {% include 'navbar.html' %}
+  <div class="overall-div">
+    {% include 'navbar-side.html' %}
+>>>>>>> Stashed changes
     <div class="page-content">
       <div class="hero-image">
         <h1>PRACTICE PORTALS</h1>
@@ -146,7 +156,9 @@
               <p class="paragraph-10">The Court has been actively working to adopt technology that will allow accused persons and/or counsel to attend criminal case management appearances using remote technology. Beginning Monday September 8, 2020, counsel and accused persons who are out of custody will be able to attend for criminal case management appearances in Welland by videoconference or audioconference (telephone) using Zoom.</p>
             </div>
           </div>
+          
           <div class="accordion-wrapper">
+<<<<<<< Updated upstream
             <div data-w-id="8a18752c-9761-0f0f-93b5-2c5abc7dd32f" style="height:70px" class="accordion-item">
               <div class="w-layout-grid grid-17">
                 <div class="accordion-item-trigger">
@@ -224,11 +236,22 @@
                 <div class="accordion-item-trigger">
                   <div class="div-block-54">
                     <h3 class="pr-heading">Fort Erie Notices</h3>
+=======
+
+            <!-- Place sections here  -->
+            {% for section in sections %}
+            <div data-w-id="8a18752c-9761-0f0f-93b5-2c5abc7dd32f" style="height:70px" class="accordion-item">
+              <div class="w-layout-grid grid-17">
+                <div class="accordion-item-trigger">
+                  <div class="div-block-54">
+                    <h3 class="pr-heading">{{section.title}}</h3>
+>>>>>>> Stashed changes
                     <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0)" class="accordion-icon-2 w-icon-dropdown-toggle"></div>
                   </div>
                 </div>
               </div>
               <div class="accordion-content">
+<<<<<<< Updated upstream
                 <ul role="list" class="list">
                   <li class="list-item">
                     <a href="http://www.execulink.com/~wellaw/images/criminal/Accused%20Notice%20-%20Fort%20Erie%20October%2015%202020.pdf" target="_blank" class="link-3">Accused Notice - Updated October 15, 2020<br></a>
@@ -242,6 +265,14 @@
                 </ul>
               </div>
             </div>
+=======
+                {{section.links|safe}}
+              </div>
+            </div>
+            {% endfor %}
+            <!-- End Here -->
+
+>>>>>>> Stashed changes
           </div>
         </div>
       </div>
