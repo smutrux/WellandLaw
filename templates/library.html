@@ -42,60 +42,39 @@
           <div class="second-example-with-unterline">
             <div data-current="Tab 1" data-easing="ease-in-out" data-duration-in="300" data-duration-out="300" class="tabs w-tabs">
               <div class="tabs-menu-underline-wrapper w-tab-menu">
-                <a data-w-tab="Tab 1" class="tabs-nav-item-underline _01 w-inline-block w-tab-link w--current">
-                  <div class="tabs-nav-text">Legal Resources</div>
+
+                <!-- List the Tab Headings here -->
+                {% for section in sections %}
+                <a data-w-tab="{{section.id}}" class="tabs-nav-item-underline _01 w-inline-block w-tab-link w--current">
+                  <div class="tabs-nav-text">{{section.title}}</div>
                   <div class="tabs-nav-unterline"></div>
                 </a>
-                <a data-w-tab="Tab 2" class="tabs-nav-item-underline _02 w-inline-block w-tab-link">
-                  <div class="tabs-nav-text">Research Services</div>
-                </a>
-                <a data-w-tab="Tab 3" class="tabs-nav-item-underline _03 w-inline-block w-tab-link">
-                  <div class="tabs-nav-text">Interlibrary Loan</div>
-                </a>
+                {% endfor %}
+                <!-- End Here -->
+                
+
               </div>
               <div class="tabs-content-wrapper w-tab-content">
-                <div data-w-tab="Tab 1" class="tab-content-item w-tab-pane w--tab-active">
+
+                <!-- Place sections Here -->
+                {% for section in sections %}
+                <div data-w-tab="{{section.id}}" class="tab-content-item w-tab-pane w--tab-active">
                   <div class="tab-content">
                     <div class="resource">
                       <div class="w-layout-grid grid-14">
                         <div id="w-node-_04037700-6722-f158-0c70-abf1e5117eb2-0f771e77" class="resource-pic">
-                          <h2><strong>Legal Resources</strong></h2><img sizes="(max-width: 479px) 100vw, (max-width: 767px) 380px, (max-width: 991px) 420px, 500px" width="282" srcset="{% static 'images/Why-Choose-Our-Criminal-Lawyers-In-Saskatoon-p-500.jpg' %} 500w, {% static 'images/Why-Choose-Our-Criminal-Lawyers-In-Saskatoon-p-800.jpg' %} 800w, {% static 'images/Why-Choose-Our-Criminal-Lawyers-In-Saskatoon-p-1080.jpg' %} 1080w, {% static 'images/Why-Choose-Our-Criminal-Lawyers-In-Saskatoon-p-1600.jpg' %} 1600w, {% static 'images/Why-Choose-Our-Criminal-Lawyers-In-Saskatoon.jpg' %} 1620w" src="{% static 'images/Why-Choose-Our-Criminal-Lawyers-In-Saskatoon.jpg' %}" loading="lazy" alt="" class="image-44">
+                          <h2><strong>{{section.title}}</strong></h2><img sizes="(max-width: 479px) 100vw, (max-width: 767px) 380px, (max-width: 991px) 420px, 500px" width="282" srcset="{{section.image.url}} 500w, {{section.image.url}} 800w, {{section.image.url}} 1080w, {{section.image.url}} 1600w, {{section.image.url}} 1620w" src="{{section.image.url}}" loading="lazy" alt="" class="image-44">
                         </div>
                         <div class="resource-content">
-                          <p id="w-node-_17748a09-65e9-768f-e349-ea86a52c40bc-0f771e77" class="paragraph-19">We are also proud to offer access to the following online resources (in-library only): <br> - Westlaw Canada <em>(CriminalSource FamilySource, Estates &amp; TrustsSource)<br>- </em>Lexis Advance Quicklaw (including Practical Guidance, Context, Pleadings, Motions and Facta) <br>- O’Brien’s Encyclopedia of Forms Online <br>- Thomson Reuters ProView (select titles) <br>- Hein Online (password required through LSO) <br>- VLexJustis </p>
+                          <p id="w-node-_17748a09-65e9-768f-e349-ea86a52c40bc-0f771e77" class="paragraph-19">{{section.content|safe}}</p>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div data-w-tab="Tab 2" class="tab-content-item w-tab-pane">
-                  <div class="tab-content">
-                    <div class="resource">
-                      <div class="w-layout-grid grid-14">
-                        <div id="w-node-b901a02c-3a69-3c0d-cf43-e5957b2daf71-0f771e77" class="resource-pic">
-                          <h1 class="big-subheading"><strong>Research Services</strong></h1><img sizes="(max-width: 479px) 100vw, (max-width: 767px) 380px, (max-width: 991px) 420px, 500px" width="282" srcset="{% static 'images/image-lawyers-1-p-500.webp' %} 500w, {% static 'images/image-lawyers-1-p-800.webp' %} 800w, {% static 'images/image-lawyers-1.webp' %} 956w" src="{% static 'images/image-lawyers-1.webp' %}" loading="lazy" alt="" class="image-44">
-                        </div>
-                        <div class="resource-content">
-                          <p id="w-node-_9669ad7f-73f1-a743-e03a-ae236f939531-0f771e77" class="paragraph-19">The librarian is available during regular hours (9:00 AM to 4:30 PM, Monday to Friday) to answer reference questions, advise on research strategy, and provide assistance in locating and using library resources. For assistance, clients may contact the library in person, or via phone, or email.<br>‍<br><strong>Circulation</strong>: <br>Books may be signed out for a 2-week loan period. At the end of this period, they must be returned to the library, or replaced. Overdue books will be subject to fines and/or reduced Library and WCLA Member privileges. <br><br>Items marked with a yellow “Library Use Only” sticker are non-circulating and cannot be removed from the library. Special arrangements may be made with the Librarian for the removal of non-circulating items, on a case-by-case basis.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div data-w-tab="Tab 3" class="tab-content-item w-tab-pane">
-                  <div class="tab-content">
-                    <div class="resource">
-                      <div class="w-layout-grid grid-14">
-                        <div id="w-node-_55e0358f-9a18-8a79-cac2-b6f67f5f2afc-0f771e77" class="resource-pic">
-                          <h1 class="big-subheading"><strong>Interlibrary Loan</strong></h1><img sizes="(max-width: 479px) 100vw, (max-width: 767px) 380px, (max-width: 991px) 420px, 500px" width="282" srcset="{% static 'images/towfiqu-barbhuiya-jpqyfK7GB4w-unsplash-p-500.jpg' %} 500w, {% static 'images/towfiqu-barbhuiya-jpqyfK7GB4w-unsplash-p-800.jpg' %} 800w, {% static 'images/towfiqu-barbhuiya-jpqyfK7GB4w-unsplash-p-1080.jpg' %} 1080w, {% static 'images/towfiqu-barbhuiya-jpqyfK7GB4w-unsplash-p-1600.jpg' %} 1600w, {% static 'images/towfiqu-barbhuiya-jpqyfK7GB4w-unsplash-p-2000.jpg' %} 2000w, {% static 'images/towfiqu-barbhuiya-jpqyfK7GB4w-unsplash-p-2600.jpg' %} 2600w, {% static 'images/towfiqu-barbhuiya-jpqyfK7GB4w-unsplash-p-3200.jpg' %} 3200w" src="{% static 'images/towfiqu-barbhuiya-jpqyfK7GB4w-unsplash.jpg' %}" loading="lazy" alt="" class="image-44">
-                        </div>
-                        <div class="resource-content">
-                          <p id="w-node-fcc5440a-5ffa-cc41-6461-c91b608e9489-0f771e77" class="paragraph-19">Members are encouraged to contact the library if needed materials are not available in the on-site library collection; the librarian may be able to acquire items through interlibrary loan. The WCLA Library has borrowing privileges with most Ontario courthouse libraries, as well as the Law Society of Ontario’s Great Library.<br>‍<br><strong>Computer and Wireless Access:<br>‍</strong> Computers are available in the library, providing access to word processing software, the Internet, and printing services in the courthouse. Each computer is also equipped with the library&#x27;s online resource collection, which provides free access to products such as Lexis Advance Quicklaw, WestlawNext Canada, O&#x27;Brien&#x27;s Forms and Precedents, and VLexJustis. Wireless Internet access is also available in the WCLA Library. WCLA Members and visiting counsel have access to wireless free of charge.  <br><br><strong>Training:</strong> <br>The librarian is available to provide instruction on the use of both print and electronic resources. Clients are encouraged to request help as needed, or to make an appointment with a librarian for more in-depth instruction.  </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                {% endfor %}
+                <!-- End Here -->
+
               </div>
             </div>
           </div>

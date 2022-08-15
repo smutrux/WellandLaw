@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from . models import Members, Event, BoardMember, PublicResources, Library, PracticePortal
+from . models import *
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.conf import settings
