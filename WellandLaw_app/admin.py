@@ -8,4 +8,5 @@ admin.site.register(PublicResources)
 admin.site.register(Library)
 admin.site.register(Job)
 admin.site.register(PracticePortal)
+admin.site.register(Role)
 

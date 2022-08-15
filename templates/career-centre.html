@@ -37,46 +37,34 @@
           <p class="blurb-paragraph career-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
         </div>
       </div>
+
+      {% for role in roles %}
       <div class="new-section wf-section">
         <div class="div-block-56">
-          <h2><strong>Attorneys and Managemnet Roles</strong></h2>
+          <h2><strong>{{role.title}}</strong></h2>
           <div class="w-layout-grid grid-16">
+
+            {% for job in jobs %}
+            {% if job.role == role %}
             <div id="w-node-bdc73517-e393-c9d8-220e-b36b5ea2152f-99771e72" class="div-block-57">
-              <a href="#" class="link-block-6 w-inline-block">
-                <h4 class="roles-headings">Family and Estate Lawyer<br></h4>
+              <a href="{{job.link}}" class="link-block-6 w-inline-block">
+                <h4 class="roles-headings">{{job.position}}<br></h4>
               </a>
               <div class="lawyers"><img src="{% static 'images/briefcase.png' %}" loading="lazy" srcset="{% static 'images/briefcase-p-500.png' %} 500w, images/briefcase.png' %} 512w" sizes="(max-width: 767px) 25px, (max-width: 991px) 3vw, 25px" alt="" class="image-47">
-                <div class="text-block-26">Nanda &amp; Associate Lawyers</div>
+                <div class="text-block-26">{{job.organization}}</div>
               </div>
               <div class="lawyers"><img src="{% static 'images/Time.png' %}" loading="lazy" srcset="{% static 'images/Time-p-500.png' %} 500w, images/Time.png' %} 512w" sizes="(max-width: 767px) 25px, (max-width: 991px) 3vw, 25px" alt="" class="image-47">
-                <div class="text-block-26">Nanda &amp; Associate Lawyers</div>
+                <div class="text-block-26">{{job.date}}</div>
               </div>
             </div>
-            <div id="w-node-_4dea3301-f59f-7c05-a51b-10de1bc4bdf2-99771e72" class="div-block-57">
-              <a href="#" class="link-block-7 w-inline-block">
-                <h4 class="roles-headings">Family and Estate Lawyer </h4>
-              </a>
-              <div class="lawyers"><img src="{% static 'images/briefcase.png' %}" loading="lazy" srcset="{% static 'images/briefcase-p-500.png' %} 500w, images/briefcase.png' %} 512w" sizes="(max-width: 767px) 25px, (max-width: 991px) 3vw, 25px" alt="" class="image-47">
-                <div class="text-block-26">Nanda &amp; Associate Lawyers</div>
-              </div>
-              <div class="lawyers"><img src="{% static 'images/Time.png' %}" loading="lazy" srcset="{% static 'images/Time-p-500.png' %} 500w, images/Time.png' %} 512w" sizes="(max-width: 767px) 25px, (max-width: 991px) 3vw, 25px" alt="" class="image-47">
-                <div class="text-block-26">Nanda &amp; Associate Lawyers</div>
-              </div>
-            </div>
-            <div id="w-node-_2e8d25f5-9157-7454-78ae-452ef0099abd-99771e72" class="div-block-57">
-              <a href="#" class="link-block-8 w-inline-block">
-                <h4 class="roles-headings">Family and Estate Lawyer </h4>
-              </a>
-              <div class="lawyers"><img src="{% static 'images/briefcase.png' %}" loading="lazy" srcset="{% static 'images/briefcase-p-500.png' %} 500w, images/briefcase.png' %} 512w" sizes="(max-width: 767px) 25px, (max-width: 991px) 3vw, 25px" alt="" class="image-47">
-                <div class="text-block-26">Nanda &amp; Associate Lawyers</div>
-              </div>
-              <div class="lawyers"><img src="{% static 'images/Time.png' %}" loading="lazy" srcset="{% static 'images/Time-p-500.png' %} 500w, images/Time.png' %} 512w" sizes="(max-width: 767px) 25px, (max-width: 991px) 3vw, 25px" alt="" class="image-47">
-                <div class="text-block-26">Nanda &amp; Associate Lawyers</div>
-              </div>
-            </div>
+            {% endif %}
+            {% endfor %}
+
           </div>
         </div>
       </div>
+      {% endfor %}
+
       <div class="new-section wf-section">
         <div class="div-block-56">
           <h2><strong>Support Staff</strong></h2>
@@ -119,8 +107,8 @@
       </div>
 
       {% for mssg in messages %}
-      <div class="alert alert-warning alert-dismissible fade show" role="alert" style="text-align: center;
-      background-color: #8d8d79; color: #ffffff;border-radius: 5px;">
+      <div class="alert alert-warning alert-dismissible fade show" role="alert" style="margin-left: 40%; margin-right: 40%; justify-content: center; align-items: center; top: 50%; left: 50%; text-align: center; padding-top: 10px;
+      background-color: #3070e6; color: #ffffff; border-radius: 15px; width: 350px; height: 100px;">
         <strong>{{mssg}}</strong>
 
       </div>

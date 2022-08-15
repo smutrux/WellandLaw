@@ -71,20 +71,19 @@ class Members(models.Model):
     class Meta:
         verbose_name_plural = "Members"
 
-
 class Role(models.Model):
     title = models.CharField(max_length=200)
 
-    def __init__(self):
+    def __str__(self):
         return self.title
 
 
 class Job(models.Model):
-    date = models.DateField(blank=True, null=True)
+    role = models.ForeignKey(Role, on_delete=models.CASCADE, null=True)
     position = models.CharField(max_length=200)
     organization = models.CharField(max_length=300, blank=True, null=True)
+    date = models.DateField(blank=True, null=True)
     link = models.URLField(max_length=2000, blank=True, null=True)
-    role = models.ForeignKey(Role, on_delete=models.CASCADE, null=True)
 
     def __str__(self):
-        return self.organization
+        return self.position

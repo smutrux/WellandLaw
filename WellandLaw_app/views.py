@@ -16,6 +16,9 @@ def aboutus(request):
     return render(request, 'about-us.html', context)
 
 def careercentre(request):
+    roles = Role.objects.all()
+    jobs = Job.objects.order_by('date').all()
+
 
     if request.method == 'POST':
         # Retrieving the form's information
@@ -43,7 +46,9 @@ def careercentre(request):
 
         return redirect('career-centre')
 
-    return render(request, 'career-centre.html')
+
+    context = {'roles':roles, 'jobs': jobs}
+    return render(request, 'career-centre.html', context)
 
 def contactus(request):
 
