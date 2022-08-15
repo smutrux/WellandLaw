@@ -37,7 +37,7 @@
             <!-- Place backend here -->
             {% for resource in resources %}
             <div data-w-id="f1a6cd1f-4eab-02a7-46ba-c6056ff8017f" style="height:110px" class="accordion-item">
-              <div class="w-layout-grid grid-13"><img src="{% static 'images/Gov.png' %}" loading="lazy" id="w-node-f1a6cd1f-4eab-02a7-46ba-c6056ff80181-4b771e7a" srcset="{% static 'images/Gov-p-500.png' %} 500w, {% static 'images/Gov.png' %} 512w" sizes="(max-width: 479px) 100vw, 60px" alt="" class="image-42">
+              <div class="w-layout-grid grid-13"><img src="{{resource.icon.url}}" loading="lazy" id="w-node-f1a6cd1f-4eab-02a7-46ba-c6056ff80181-4b771e7a" srcset="{{resource.icon.url}} 500w, {{resource.icon.url}} 512w" sizes="(max-width: 479px) 100vw, 60px" alt="" class="image-42">
                 <div class="accordion-item-trigger">
                   <div class="div-block-54">
                     <h3 class="pr-heading">{{resource.title}}</h3>
