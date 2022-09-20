@@ -1,12 +1,14 @@
+from django import forms
 from django.db import models
 import uuid
-from ckeditor.fields import RichTextField 
+from ckeditor.fields import RichTextField
+
 
 class BoardMember(models.Model):
     name = models.CharField(max_length=200)
     email = models.EmailField(blank=True, null=True)
     position = models.CharField(max_length=200)
-    image = models.ImageField(upload_to='static/images/boardmembers', default = 'static/images/boardmembers/default.jpg')
+    image = models.ImageField(upload_to='static/images/boardmembers', default='static/images/boardmembers/default.jpg')
 
     def __str__(self):
         return self.name
@@ -26,6 +28,7 @@ class Event(models.Model):
     def __str__(self):
         return self.title
 
+
 class PublicResources(models.Model):
     title = models.CharField(max_length=200)
     icon = models.ImageField(upload_to='static/images/publicresources', blank=True, null=True)
@@ -38,6 +41,7 @@ class PublicResources(models.Model):
     class Meta:
         verbose_name_plural = "PublicResources"
 
+
 class Library(models.Model):
     title = models.CharField(max_length=200)
     image = models.ImageField(upload_to='static/images/publicresources', blank=True, null=True)
@@ -46,12 +50,20 @@ class Library(models.Model):
     def __str__(self):
         return self.title
 
+
 class PracticePortal(models.Model):
+    FILETYPE_CHOICES = [
+        ('pdf', '.pdf'),
+        ('hl', 'Link'),
+    ]
     title = models.CharField(max_length=200)
+    type = models.CharField(max_length=4, choices=FILETYPE_CHOICES, default='hl')
+    pdf = models.FileField(blank=True)
     links = RichTextField(blank=True, null=True)
 
     def __str__(self):
         return self.title
+
 
 class Members(models.Model):
     first_name = models.CharField(max_length=300)
@@ -59,7 +71,7 @@ class Members(models.Model):
     firm = models.CharField(max_length=200)
     address = models.CharField(max_length=200)
     phone = models.CharField(max_length=10, blank=True, null=True)
-    fax =  models.CharField(max_length=10, blank=True, null=True)
+    fax = models.CharField(max_length=10, blank=True, null=True)
     url = models.URLField(max_length=2000)
     practice = models.CharField(max_length=500)
     email = models.EmailField(blank=True, null=True)
@@ -70,6 +82,7 @@ class Members(models.Model):
 
     class Meta:
         verbose_name_plural = "Members"
+
 
 class Role(models.Model):
     title = models.CharField(max_length=200)

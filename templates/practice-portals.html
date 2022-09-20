@@ -69,12 +69,16 @@
                 </div>
               </div>
               <div class="accordion-content">
-                {{section.links|safe}}
+                {% if  section.type == 'pdf' %}
+                  <a href="{{ section.pdf.url }}"></a>
+                  {{section.pdf}}
+                {% elif section.type == 'hl' %}
+                  {{section.links|safe}}
+                {% endif %}
               </div>
             </div>
             {% endfor %}
             <!-- End Here -->
-
           </div>
         </div>
       </div>

@@ -143,6 +143,9 @@ def practiceportals(request):
     context = {'sections': sections}
     return render(request, 'practice-portals.html', context)
 
+def pdf_viewer(request):
+    pdf = get_obejt_or
+
 def library(request):
     sections = Library.objects.all()
     context = {'sections': sections}
