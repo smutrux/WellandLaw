@@ -1,6 +1,6 @@
 <!DOCTYPE html><!--  This site was created in Webflow. https://www.webflow.com  -->
 {% load static %}
-<!--  Last Published: Thu Aug 11 2022 15:57:55 GMT+0000 (Coordinated Universal Time)  -->
+<!--  Last Published: Fri Sep 16 2022 18:24:29 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="62f411e0c7f4a5fa0f771e77" data-wf-site="62d96ebd93ffb09c4e003d66">
 <head>
   <meta charset="utf-8">
@@ -25,15 +25,18 @@
     {% include 'navbar-side.html' %}
     <div class="page-content">
       <div class="hero-image">
-        <h1>THE LAW LIBRARY</h1>
+        <h1 class="heading-43">THE LAW LIBRARY</h1>
       </div>
       <div class="new-section wf-section">
         <div class="div-block-55">
           <div class="introduction">
-            <p class="blurb-paragraph library-paragraph">The R. Boak Burns Law Library is named in honour of the late R. Boak Burns, Q.C. and former President of the Welland County Law Association. The library is operated by a volunteer board of directors and members of the Welland County Law Association. The library is for the sole use of the members, their staff and visiting counsel.</p>
+            <p class="blurb-paragraph library-paragraph">The R. Boak Burns Law Library is named in honour of the late R. Boak Burns, Q.C. and former President of the Welland County Law Association. The library is operated by an Executive Director and volunteer board of directors of the Welland County Law Association. The library is for the sole use of the members, their staff and visiting counsel.</p>
           </div>
           <div class="timings"><img src="{% static 'images/Time.png' %}" loading="lazy" srcset="{% static 'images/Time-p-500.png' %} 500w, {% static 'images/Time.png' %} 512w" sizes="35px" alt="" class="image-43">
             <div class="time blurb-paragraph">Monday to Friday ~ 9:00 a.m. to 4:30 p.m.</div>
+          </div>
+          <div class="div-block-65">
+            <a href="#" class="new-button w-button">Library Catalogue</a>
           </div>
         </div>
       </div>
@@ -41,6 +44,7 @@
 
       <div class="new-section legal-resources wf-section">
         <div class="container-3 w-container">
+          <h2><strong>Services</strong></h2>
           <div class="second-example-with-unterline">
             <div data-current="Tab 1" data-easing="ease-in-out" data-duration-in="300" data-duration-out="300" class="tabs w-tabs">
               <div class="tabs-menu-underline-wrapper w-tab-menu">
@@ -63,10 +67,10 @@
                     <div class="resource">
                       <div class="w-layout-grid grid-14">
                         <div id="w-node-_04037700-6722-f158-0c70-abf1e5117eb2-0f771e77" class="resource-pic">
-                          <h2><strong>{{section.title}}</strong></h2><img sizes="(max-width: 479px) 100vw, (max-width: 767px) 380px, (max-width: 991px) 420px, 500px" width="282" srcset="{{section.image.url}} 500w, {{section.image.url}} 800w, {{section.image.url}} 1080w, {{section.image.url}} 1600w, {{section.image.url}} 1620w" src="{{section.image.url}}" loading="lazy" alt="" class="image-44">
+                          <h1 class="big-subheading"><strong>{{section.title}}</strong></h1><img sizes="(max-width: 479px) 0px, (max-width: 991px) 100vw, 500px" width="282" srcset="{{section.image.url}} 500w, {{section.image.url}} 800w, {{section.image.url}} 1080w, {{section.image.url}} 1600w, {{section.image.url}} 2000w, {{section.image.url}} 2600w, {{section.image.url}} 3200w" src="{{section.image.url}}" loading="lazy" alt="" class="image-44">
                         </div>
                         <div class="resource-content">
-                          <p id="w-node-_17748a09-65e9-768f-e349-ea86a52c40bc-0f771e77" class="paragraph-19">{{section.content|safe}}</p>
+                          <p id="w-node-fc773c35-33ee-4d03-ca2b-bb53e85157d6-0f771e77" class="paragraph-19">{{section.content|safe}}</p>
                         </div>
                       </div>
                     </div>
@@ -94,11 +98,11 @@
               <div class="cta-button-wrap">
                 <a href="{% url 'contact-us' %}" class="cta-button w-button">Contact Us!</a>
                 <div class="feature-wrap">
-                  <div class="check-icon"><img src="https://uploads-ssl.webflow.com/60a0e114c2b02ebb74e8a501/60c58b73c3ee5b01da6a8670_Icon%20Check.svg' %}" loading="lazy" alt=""></div>
+                  <div class="check-icon"><img src="https://uploads-ssl.webflow.com/60a0e114c2b02ebb74e8a501/60c58b73c3ee5b01da6a8670_Icon%20Check.svg" loading="lazy" alt=""></div>
                   <div class="feature-text">905 - 734 - 3174</div>
                 </div>
                 <div class="feature-wrap">
-                  <div class="check-icon"><img src="https://uploads-ssl.webflow.com/60a0e114c2b02ebb74e8a501/60c58b73c3ee5b01da6a8670_Icon%20Check.svg' %}" loading="lazy" alt=""></div>
+                  <div class="check-icon"><img src="https://uploads-ssl.webflow.com/60a0e114c2b02ebb74e8a501/60c58b73c3ee5b01da6a8670_Icon%20Check.svg" loading="lazy" alt=""></div>
                   <div class="feature-text">
                     <a href="mailto:wcla@execulink.com" target="_blank" class="link-4">wcla@execulink.com</a>
                   </div>
