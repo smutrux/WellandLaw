@@ -70,8 +70,9 @@
               </div>
               <div class="accordion-content">
                 {% if  section.type == 'pdf' %}
-                  <a href="{{ section.pdf.url }}"></a>
-                  {{section.pdf}}
+                  <a href="{{ section.pdf.url }}" target="_new">
+                    {{section.pdf}}
+                  </a>
                 {% elif section.type == 'hl' %}
                   {{section.links|safe}}
                 {% endif %}
