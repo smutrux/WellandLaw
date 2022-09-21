@@ -1,7 +1,9 @@
+from django.contrib import admin
 from django.urls import path
 from . import views
 
 urlpatterns = [
+    path('admin/', admin.site.urls),
     path('about-us/', views.aboutus, name="about-us"),
     path('career-centre/', views.careercentre, name="career-centre"),
     path('contact-us/', views.contactus, name="contact-us"),
@@ -13,5 +15,5 @@ urlpatterns = [
     path('membership-page/', views.membershippage, name="membership-page"),
     path('practice-portals/', views.practiceportals, name="practice-portals"),
     path('public-resourcess/', views.publicresources, name="public-resources"),
-    
+
 ]

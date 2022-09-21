@@ -58,7 +58,7 @@ class PracticePortal(models.Model):
     ]
     title = models.CharField(max_length=200)
     type = models.CharField(max_length=4, choices=FILETYPE_CHOICES, default='hl')
-    pdf = models.FileField(blank=True)
+    pdf = models.FileField(blank=True, null=True, upload_to="static/documents/")
     links = RichTextField(blank=True, null=True)
 
     def __str__(self):
