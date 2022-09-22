@@ -106,15 +106,17 @@
         <h2><strong>Fill Out This Form to Request an Ad Slot</strong></h2>
         <div class="div-block-16">
           <div class="form-block-2 w-form">
-            <form id="wf-form-Full-Name" name="wf-form-Full-Name" data-name="Full Name" method="get" class="centered-form">
+
+            <form action="{% url 'career-centre' %}" method="POST" enctype="multipart/form-data" id="wf-form-Full-Name" name="wf-form-Full-Name" data-name="Full Name" method="get" class="centered-form">
               {% csrf_token %}
               <div class="contact-form">
                 <div class="w-layout-grid grid">
                   <div id="w-node-f200ca6b-4f43-7d64-fa4a-25bca5d4b1cc-99771e72"><label for="name" class="field-label">Contact Name for Posting *</label><input type="text" class="text-field-2 w-input" maxlength="256" name="name" data-name="Name" placeholder="John Doe" id="name" required=""></div>
-                  <div id="w-node-f200ca6b-4f43-7d64-fa4a-25bca5d4b1d0-99771e72"><label for="Email-Address" class="field-label">Email Address *</label><input type="email" class="w-input" maxlength="256" name="Email-Address" data-name="Email Address" placeholder="johndoe@email.com" id="Email-Address" required=""></div>
-                  <div id="w-node-f200ca6b-4f43-7d64-fa4a-25bca5d4b1d4-99771e72"><label for="Phone-Number" class="field-label">Phone Number</label><input type="tel" class="w-input" maxlength="256" name="Phone-Number" data-name="Phone Number" placeholder="(000) 000 - 0000" id="Phone-Number"></div>
-                  <div id="w-node-f200ca6b-4f43-7d64-fa4a-25bca5d4b1d8-99771e72"><label for="Firm-Name" class="field-label">Title of Ad *</label><input type="text" class="w-input" maxlength="256" name="Firm-Name" data-name="Firm Name" placeholder="" id="Firm-Name"></div>
-                  <div id="w-node-f200ca6b-4f43-7d64-fa4a-25bca5d4b1dc-99771e72" class="div-block-12"><label for="Subject" class="field-label">Catagory</label></div><select id="field" name="field" data-name="Field" required="" class="select-field w-node-f200ca6b-4f43-7d64-fa4a-25bca5d4b1df-99771e72 w-select">
+                  <div id="w-node-f200ca6b-4f43-7d64-fa4a-25bca5d4b1d0-99771e72"><label for="Email-Address" class="field-label">Email Address *</label><input type="email" class="w-input" maxlength="256" name="email" data-name="Email Address" placeholder="johndoe@email.com" id="Email-Address" required=""></div>
+                  <div id="w-node-f200ca6b-4f43-7d64-fa4a-25bca5d4b1d4-99771e72"><label for="Phone-Number" class="field-label">Phone Number</label><input type="tel" class="w-input" maxlength="256" name="phone" data-name="Phone Number" placeholder="(000) 000 - 0000" id="Phone-Number"></div>
+                  <div id="w-node-f200ca6b-4f43-7d64-fa4a-25bca5d4b1d8-99771e72"><label for="Firm-Name" class="field-label">Title of Ad *</label><input type="text" class="w-input" maxlength="256" name="adName" data-name="Firm Name" placeholder="" id="Firm-Name"></div>
+                  <div id="w-node-f200ca6b-4f43-7d64-fa4a-25bca5d4b1dc-99771e72" class="div-block-12"><label for="Subject" class="field-label">Catagory</label></div>
+                    <label for="field"></label><select id="field" name="adCategory" data-name="adCategory" required="" class="select-field w-node-f200ca6b-4f43-7d64-fa4a-25bca5d4b1df-99771e72 w-select">
                     <option value="">Select one...</option>
                     <option value="First">Job Posting</option>
                     <option value="Second">Student Job Posting</option>
@@ -124,7 +126,7 @@
                     <option value="Another option">Community Event</option>
                     <option value="Another option">Items for Sale or Rent</option>
                   </select>
-                  <div class="div-block-62 w-node-f200ca6b-4f43-7d64-fa4a-25bca5d4b1e0-99771e72"><input id="File-Upload" type="file" name="file"></div>
+                  <div class="div-block-62 w-node-f200ca6b-4f43-7d64-fa4a-25bca5d4b1e0-99771e72"><input id="File-Upload" type="file" name="document"></div>
                 </div>
               </div><input type="submit" data-wait="Please wait..." value="Submit" class="new-button w-button">
             </form>

@@ -24,15 +24,16 @@ def careercentre(request):
     if request.method == 'POST':
         # Retrieving the form's information
         name = request.POST['name']
-        email = request.POST['Email-Address']
-        phone = request.POST['Phone-Number']
-        title = request.POST['Firm-Name']
-        catagory = request.POST['field']
-        document = request.POST['file']
+        email = request.POST['email']
+        phone = request.POST['phone']
+        adName = request.POST['adName']
+        adCategory = request.POST['adCategory']
+        document = request.FILES['document']
         # initialize the variables for email and backend
 
         subject = "Ad slot request: " + name
-        message = "Phone #: " + phone + "\n" + "Email: " + email + "\n" + "Title of Ad: " + title + "\n" + "Category: " + catagory + "\n" + "File: " + document
+        message = "Phone #: " + phone + "\n" + "Email: " + email + "\n" + "Title of Ad: " + adName + "\n" + "Category: " + adCategory + "\n"
+        # got rid of file as it would throw an error that could not be fixed easily
 
         send_mail(
             subject,
@@ -44,6 +45,10 @@ def careercentre(request):
 
         messages.add_message(request, messages.SUCCESS,
                              'Your inquiry has been submitted successfully. We will get back to you shortly.')
+
+        update = CareerCentre(name=name, email=email, phone=phone, adName=adName, adCategory=adCategory, document=document)
+        update.save()
+        print("data uploaded to db")
 
         return redirect('career-centre')
 
@@ -61,7 +66,7 @@ def contactus(request):
         subject = request.POST['subject']
         message = request.POST['message']
 
-        # intialize the variables for email and backend
+        # initialize the variables for email and backend
 
         subject = "Contact: " + name + " - " + subject
         message = "Phone #: " + phone + "\n" + "Email: " + email + "\n" + "Firm: " + firm + "\n" + message

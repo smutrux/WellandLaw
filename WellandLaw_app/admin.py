@@ -10,4 +10,5 @@ admin.site.register(Job)
 admin.site.register(PracticePortal)
 admin.site.register(Role)
 admin.site.register(ContactUs)
+admin.site.register(CareerCentre)
 

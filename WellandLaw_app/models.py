@@ -115,3 +115,22 @@ class ContactUs(models.Model):
     firm = models.CharField(max_length=200)
     subject = models.CharField(max_length=200, default='First Choice', choices=SUBJECT_CATEGORIES)
     message = models.TextField()
+
+
+class CareerCentre(models.Model):
+    AD_CATEGORIES = (
+        ('Job Posting', 'Job Posting'),
+        ('Student Job Posting', 'Student Job Posting'),
+        ('Will Search Notice', 'Will Search Notice'),
+        ('Obituary', 'Obituary'),
+        ('Legal News', 'Legal News'),
+        ('Community Event', 'Community Event'),
+        ('Item for Sale or Rent', 'Item for Sale or Rent'),
+    )
+
+    name = models.CharField(max_length=300)
+    email = models.CharField(max_length=200)
+    phone = models.CharField(max_length=20)
+    adName = models.CharField(max_length=200)
+    adCategory = models.CharField(max_length=200, default='Job Posting', choices=AD_CATEGORIES)
+    document = models.FileField(blank=True, null=True, upload_to="static/documents/")
