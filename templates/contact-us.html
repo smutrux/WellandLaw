@@ -9,11 +9,11 @@
 
 <body class="new-body">
 
-  {% include 'navbar.html' %}
+  {% include 'partials/navbar.html' %}
 
   <div class="overall-div">
 
-    {% include 'navbar-side.html' %}
+    {% include 'partials/navbar-side.html' %}
 
     <div class="page-content">
       <div class="hero-image">
@@ -44,15 +44,15 @@
         </div>
         <div class="div-block-17">
           <div class="w-layout-grid contact-us-grid">
-            <div id="w-node-f20b6df7-24a6-bcf1-607e-2c7c37b39d04-ca771e73" class="contact-div"><img src="{% static 'images/Location.png' %}" loading="lazy" srcset="{% static 'images/Location-p-500.png' %} 500w, images/Location.png' %} 512w" sizes="(max-width: 767px) 45px, 50px" alt="" class="contact-icon">
+            <div id="w-node-f20b6df7-24a6-bcf1-607e-2c7c37b39d04-ca771e73" class="contact-div"><img src="{% static 'images/Location.png' %}" loading="lazy" srcset="{% static 'images/Location-p-500.png' %} 500w, {% static 'images/Location.png' %} 512w" sizes="(max-width: 767px) 45px, 50px" alt="" class="contact-icon">
               <h3 id="w-node-_265120bd-a6aa-8d5b-0f12-1e14266ad3b9-ca771e73">Visit Us</h3>
               <p class="text">102 E Main St,<br>Welland, ON L3B 3W6</p>
             </div>
-            <div id="w-node-_7a5cb99a-02f4-9b4d-0399-7667803677a2-ca771e73" class="contact-div"><img src="{% static 'images/Call.png' %}" loading="lazy" srcset="{% static 'images/Call-p-500.png' %} 500w, images/Call.png' %} 512w" sizes="(max-width: 767px) 45px, 50px" alt="" class="contact-icon">
+            <div id="w-node-_7a5cb99a-02f4-9b4d-0399-7667803677a2-ca771e73" class="contact-div"><img src="{% static 'images/Call.png' %}" loading="lazy" srcset="{% static 'images/Call-p-500.png' %} 500w, {% static 'images/Call.png' %} 512w" sizes="(max-width: 767px) 45px, 50px" alt="" class="contact-icon">
               <h3 id="w-node-_7a5cb99a-02f4-9b4d-0399-7667803677a4-ca771e73">Call Us</h3>
               <p class="text">(905) 734 - 3174</p>
             </div>
-            <div id="w-node-_77e194e6-849e-80c8-7aa2-8a891279cd89-ca771e73" class="contact-div"><img src="{% static 'images/Time.png' %}" loading="lazy" srcset="{% static 'images/Time-p-500.png' %} 500w, images/Time.png' %} 512w" sizes="(max-width: 767px) 45px, 50px" alt="" class="contact-icon">
+            <div id="w-node-_77e194e6-849e-80c8-7aa2-8a891279cd89-ca771e73" class="contact-div"><img src="{% static 'images/Time.png' %}" loading="lazy" srcset="{% static 'images/Time-p-500.png' %} 500w, {% static 'images/Time.png' %} 512w" sizes="(max-width: 767px) 45px, 50px" alt="" class="contact-icon">
               <h3 id="w-node-_77e194e6-849e-80c8-7aa2-8a891279cd8b-ca771e73">Our Hours</h3>
               <p class="text">Monday to Friday<br>9:00 AM - 4:30 PM</p>
             </div>
@@ -100,7 +100,7 @@
       </div>
     </div>
   </div>
-  {% include 'footer.html' %}
+  {% include 'partials/footer.html' %}
   <style>
 /* hide scrollbar but allow scrolling */
 body {

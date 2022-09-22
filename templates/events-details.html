@@ -7,9 +7,9 @@
 <html data-wf-page="62f411e0c7f4a56157771e75" data-wf-site="62d96ebd93ffb09c4e003d66">
 
 <body class="new-body">
-  {% include 'navbar.html' %}
+  {% include 'partials/navbar.html' %}
   <div class="overall-div">
-  {% include 'navbar-side.html' %}
+  {% include 'partials/navbar-side.html' %}
     <div class="page-content-2">
       <div class="hero-image">
         <h1 class="heading-43">EVENT DETAILS</h1>
@@ -22,7 +22,7 @@
           <div class="w-layout-grid grid-8">
             <div id="w-node-_969ad52a-c4e9-58d3-2908-2ed532155d00-57771e75" class="events-icons"><img src="https://uploads-ssl.webflow.com/62e3e92e75a7013c1f11c979/62e3e92e75a701063411c9ca_Location.png" loading="lazy" id="w-node-_969ad52a-c4e9-58d3-2908-2ed532155d01-57771e75" alt="" class="events-icon"></div>
             <p class="text-block-22">{{event.location}}</p>
-            <div id="w-node-_969ad52a-c4e9-58d3-2908-2ed532155d04-57771e75" class="events-icons"><img src="{% static 'images/MicrosoftTeams-image.png' %}" loading="lazy" id="w-node-_969ad52a-c4e9-58d3-2908-2ed532155d05-57771e75" srcset="{% static 'images/MicrosoftTeams-image-p-500.png' %} 500w, images/MicrosoftTeams-image.png' %} 512w" sizes="40px" alt="" class="events-icon"></div>
+            <div id="w-node-_969ad52a-c4e9-58d3-2908-2ed532155d04-57771e75" class="events-icons"><img src="{% static 'images/MicrosoftTeams-image.png' %}" loading="lazy" id="w-node-_969ad52a-c4e9-58d3-2908-2ed532155d05-57771e75" srcset="{% static 'images/MicrosoftTeams-image-p-500.png' %} 500w, {% static 'images/MicrosoftTeams-image.png' %} 512w" sizes="40px" alt="" class="events-icon"></div>
             <div id="w-node-_969ad52a-c4e9-58d3-2908-2ed532155d06-57771e75" class="text-block-22">{{event.date}}</div>
             <div id="w-node-_969ad52a-c4e9-58d3-2908-2ed532155d08-57771e75" class="events-icons"><img src="https://uploads-ssl.webflow.com/62e3e92e75a7013c1f11c979/62e3e92e75a7016f8c11c9cb_Time.png" loading="lazy" id="w-node-_969ad52a-c4e9-58d3-2908-2ed532155d09-57771e75" alt="" class="events-icon"></div>
             <div id="w-node-_969ad52a-c4e9-58d3-2908-2ed532155d0a-57771e75" class="text-block-22">{{event.start}} - {{event.end}}</div>
@@ -37,7 +37,7 @@
       </div>
     </div>
   </div>
-  {% include 'footer.html' %}
+  {% include 'partials/footer.html' %}
   <style>
 /* hide scrollbar but allow scrolling */
 body {

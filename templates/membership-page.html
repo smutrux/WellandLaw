@@ -9,11 +9,11 @@
 
 <body class="new-body">
 
-  {% include 'navbar.html' %}
+  {% include 'partials/navbar.html' %}
 
   <div class="overall-div">
 
-    {% include 'navbar-side.html' %}
+    {% include 'partials/navbar-side.html' %}
 
     <div class="page-content">
       <div class="hero-image">
@@ -313,7 +313,7 @@
                 </div>
               </form>
               <div class="multi-step-foirm---success-message---brix w-form-done">
-                <div class="submit-content-wrapper---brix"><img src="images/form-check-multi-step-form-webflow-cloneable-template-brix-templates.svg" alt="" class="completed-form-illustrations---brix">
+                <div class="submit-content-wrapper---brix"><img src="{% static 'images/form-check-multi-step-form-webflow-cloneable-template-brix-templates.svg' %}" alt="" class="completed-form-illustrations---brix">
                   <h3 class="step-title---brix">Thank you! Your submission has been received!</h3>
                   <p>Please review all the information you previously typed in the past steps, and if all is okay, submit your message to receive a project quote in 24 - 48 hours.</p>
                 </div>
@@ -327,7 +327,7 @@
       </div>
     </div>
   </div>
-  {% include 'footer.html' %}
+  {% include 'partials/footer.html' %}
   <style>
 /* hide scrollbar but allow scrolling */
 body {
