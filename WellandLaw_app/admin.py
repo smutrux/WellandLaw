@@ -9,4 +9,5 @@ admin.site.register(Library)
 admin.site.register(Job)
 admin.site.register(PracticePortal)
 admin.site.register(Role)
+admin.site.register(ContactUs)
 

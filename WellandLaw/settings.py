@@ -83,8 +83,11 @@ WSGI_APPLICATION = 'WellandLaw.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'wellandDB',
+        'USER': 'postgres',
+        'PASSWORD': '1234',
+        'HOST': 'localhost',
     }
 }
 
@@ -123,8 +126,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'afkciviconnect@gmail.com'
-EMAIL_HOST_PASSWORD = 'rurxpzwovimudsud'
+EMAIL_HOST_USER = 'afkciviconnect1234@gmail.com' # THIS NEEDS TO BE SETUP AGAIN FOR WHOEVER SEES THIS
+EMAIL_HOST_PASSWORD = 'hcjlbkncilvkzctp'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/

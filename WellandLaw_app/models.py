@@ -100,3 +100,18 @@ class Job(models.Model):
 
     def __str__(self):
         return self.position
+
+
+class ContactUs(models.Model):
+    SUBJECT_CATEGORIES = (
+        ('First Choice', 'First Choice'),
+        ('Second Choice', 'Second Choice'),
+        ('Third Choice', 'Third Choice'),
+    )
+
+    name = models.CharField(max_length=300)
+    email = models.CharField(max_length=200)
+    phone = models.CharField(max_length=20)
+    firm = models.CharField(max_length=200)
+    subject = models.CharField(max_length=200, default='First Choice', choices=SUBJECT_CATEGORIES)
+    message = models.TextField()
